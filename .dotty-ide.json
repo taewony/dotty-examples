@@ -1,0 +1,8 @@
+[ {
+  "id" : "root/compile",
+  "compilerVersion" : "0.4.0-RC1",
+  "compilerArguments" : [ ],
+  "sourceDirectories" : [ "E:\\Agents\\dotty-examples\\src\\main\\scala-0.4", "E:\\Agents\\dotty-examples\\src\\main\\scala", "E:\\Agents\\dotty-examples\\src\\main\\java", "E:\\Agents\\dotty-examples\\target\\scala-0.4\\src_managed\\main" ],
+  "dependencyClasspath" : [ "C:\\Users\\Taewony\\.ivy2\\cache\\ch.epfl.lamp\\scala-library\\jars\\scala-library-0.4.0-RC1.jar", "C:\\Users\\Taewony\\.ivy2\\cache\\ch.epfl.lamp\\dotty-library_0.4\\jars\\dotty-library_0.4-0.4.0-RC1.jar", "C:\\Users\\Taewony\\.ivy2\\cache\\org.scala-lang\\scala-library\\jars\\scala-library-2.12.3.jar" ],
+  "classDirectory" : "E:\\Agents\\dotty-examples\\target\\scala-0.4\\classes"
+} ]
