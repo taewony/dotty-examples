@@ -1,7 +1,5 @@
 case class Perceptron(var weights: Vector[Double]) {
 
-  private def prtWeights(): Unit = printf("w = %f , %f , %f\n", weights(0), weights(1), weights(2))
-
   //given a feature vector and a set of weights, classify instance
   def classify(features: Vector[Double]): Int = {
     sigNum(dotProduct(features, weights))
@@ -11,13 +9,9 @@ case class Perceptron(var weights: Vector[Double]) {
   def train(data: Vector[(Vector[Double], Int)], learningRate : Double = 0.25) = {
     for (d <- data) {
       val error = sigNum(dotProduct(d._1, weights)) - d._2
-      weights = updateWeight(d._1, error, weights, learningRate)
+      weights = (weights zip d._1).map(x => x._1 - learningRate * error * x._2)
       prtWeights()
     }
-  }
-
-  private def updateWeight(arguments: Vector[Double], err: Int, weights: Vector[Double], learningRate: Double) = {
-    (weights zip arguments).map(x => x._1 - learningRate * err * x._2)
   }
 
   private def dotProduct(xs: Vector[Double], ys: Vector[Double]): Double =
@@ -29,4 +23,6 @@ case class Perceptron(var weights: Vector[Double]) {
       case false => 0
     }
   }
+  
+  private def prtWeights(): Unit = printf("w = %f , %f , %f\n", weights(0), weights(1), weights(2))
 }
